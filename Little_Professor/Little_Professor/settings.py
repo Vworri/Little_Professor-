@@ -75,10 +75,16 @@ WSGI_APPLICATION = 'Little_Professor.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.',
+        'NAME': '',
     }
 }
+AUTHENTICATION_BACKENDS = ('mongoengine.django.auth.MongoEngineBackend',)
+ 
+MONGO_DATABASE_NAME = 'lil_prof'
+ 
+from mongoengine import connect
+connect(MONGO_DATABASE_NAME)
 
 
 # Password validation
