@@ -30,7 +30,7 @@ pip install mongoengine
 #get and run the project
 sudo apt install git
 git clone https://github.com/Vworri/Little_Professor-.git
-git checkout backend
+git checkout backend #or the required branch
 cd Little_Professor-/Little_Professor
 ./manage.py runserver
 
