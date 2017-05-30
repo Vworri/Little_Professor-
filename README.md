@@ -7,7 +7,7 @@ Backend: Project setup instructions for Linux debian based systems
 * Django == 1.11.1
 * mongoengine >= 0.13.0
 
-### 0. Development env setup ###
+### Development setup ###
 In the terminal, run:
 ```
 #install pip:
@@ -41,4 +41,7 @@ deactivate
 workon little_professor
 
 ```
+
+### Database ###
+We are using the latest version of MongoDB, v3.4.4 (at the time of writing)
 
