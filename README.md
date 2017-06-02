@@ -1,4 +1,4 @@
-#Project
+# Project
 ## Mission Statement
 Education can change a life. This sentiment cannot be denied but education can be. Schools deem a students "unteachable" or create a hostile environments in which the student may not *want* to attend school. There may be problems at home that cause the student to become distracted or they may be unable to afford textbooks and other learning resources.
 		Although there are many mobile applications that claim to educate but they leave a lot to the learner. This does not seem unreasonable until you realize that the people who would benefit the most from education, for one reason or another, must be incentivized to learn.
