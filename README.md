@@ -44,6 +44,7 @@ workon little_professor
 
 ### Database ###
 We are using the latest version of MongoDB, v3.4.4 (at the time of writing)
+## Schema
 ```python
 
 DBentry = {"Title" = title,
