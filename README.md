@@ -44,4 +44,16 @@ workon little_professor
 
 ### Database ###
 We are using the latest version of MongoDB, v3.4.4 (at the time of writing)
+```python
+
+DBentry = {"Title" = title,
+          "Authors" = [],
+          "Realease Date" = datetime,
+          "Import Date" = datetime,
+          "Text" = {"Original" = title.pdf,
+                    "Extracted" = title.txt,
+                    "NLP'd" = processed_tile
+          }
+}
+```
 
