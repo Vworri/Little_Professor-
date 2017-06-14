@@ -5,7 +5,7 @@ Backend: Project setup instructions for Linux debian based systems
 ### Requirements ###
 * Python >= 3.5.2
 * Django == 1.11.1
-* mongoengine >= 0.13.0
+* psycopg2 == 2.7.1
 
 ### Development setup ###
 In the terminal, run:
@@ -23,9 +23,8 @@ source ~/.bashrc
 #create the virtual env:
 mkvirtualenv --python=python3 little_professor
 
-#install the following in the virtual env:
+#install Django in the virtual env:
 pip install django==1.11.1
-pip install mongoengine
 
 #get and run the project
 sudo apt install git
@@ -42,9 +41,53 @@ workon little_professor
 
 ```
 
-### Database ###
-We are using the latest version of MongoDB, v3.4.4 (at the time of writing)
-## Schema
+### Database setup (postgresql) ###
+We are using the latest version of PostgreSQL 9.5.7 (at the time of writing)
+
+```
+sudo apt update
+sudo apt install postgresql
+```
+After a few moments apt will finish downloading, installing and processing.
+
+
+We now have PostgreSQL installed and the PostgreSQL service is running in the background.
+Use the sudo command to switch to the new "postgres" account.
+```
+sudo -i -u postgres
+```
+Within the "postgres" account, create a user from the command line with the createuser command. 
+PostgreSQL will prompt you with several questions. Answer "n" to superuser and "y" to the other questions.
+```
+createuser lil_prof -P --interactive
+
+# Shall the new role be a superuser? (y/n) n
+# Shall the new role be allowed to create databases? (y/n) y
+# Shall the new role be allowed to create more new roles? (y/n) y
+```
+
+Exit out of the postgres account by pressing the 'Ctrl' + 'd'
+
+Create a new database, name it "little_professor_db"
+```
+createdb little_professor_db
+```
+
+Install Postgresql Adapter for Python in the virtualenv
+```
+workon little_professor
+pip install psycopg2
+```
+
+Configure project DATABASES settings in settings.py (see existing project)
+
+Finally, apply migrations, run the following command from the project folder
+```
+./manage.py makemigrations
+./manage.py migrate
+```
+
+## DB Schema
 ```python
 
 DBentry = {"Title" = title,
@@ -57,4 +100,3 @@ DBentry = {"Title" = title,
           }
 }
 ```
-
