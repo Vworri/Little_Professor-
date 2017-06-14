@@ -75,16 +75,14 @@ WSGI_APPLICATION = 'Little_Professor.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.',
-        'NAME': '',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'little_professor_db',
+        'USER': 'lil_prof',
+        'PASSWORD': '53t4r3450n4bl3pw',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
-AUTHENTICATION_BACKENDS = ('mongoengine.django.auth.MongoEngineBackend',)
- 
-MONGO_DATABASE_NAME = 'lil_prof'
- 
-from mongoengine import connect
-connect(MONGO_DATABASE_NAME)
 
 
 # Password validation
