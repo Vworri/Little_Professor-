@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'Little_Professor.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'little_professor_db',
+        'USER': 'lil_prof',
+        'PASSWORD': '53t4r3450n4bl3pw',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
